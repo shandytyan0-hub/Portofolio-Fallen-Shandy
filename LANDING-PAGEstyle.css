@@ -1,0 +1,258 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.LANDING-PAGE {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.LANDING-PAGE .bgnya {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.character {
+  position: absolute;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  transition: 0.35s ease;
+  z-index: 5;
+}
+
+
+.popup-imgsendi,
+.popup-imgpaler {
+  pointer-events: auto;
+}
+
+
+.name-tag {
+  pointer-events: none;
+}
+
+
+.sendi-wrap {
+  bottom: 0;
+  left: 50%;
+}
+
+
+.paler-wrap {
+  bottom: 0;
+  left: 23%;
+}
+
+.name-tag {
+  width: 380px;
+  margin-top: -220px;      
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.35s ease;
+  text-align: center;
+}
+
+.character:hover .name-tag {
+  opacity: 1;                 
+  transform: translateY(0) scale(1.15);  
+}
+
+
+
+.character:hover {
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 25px #ffffff);
+}
+
+
+.character:hover .name-tag {
+  transform: scale(1.15);
+}
+
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);   
+  pointer-events: none;           
+  transition: 0.3s ease;
+  z-index: 2;                      
+}
+
+
+.character:hover ~ .overlay,
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  pointer-events: none;
+  transition: background .25s ease;
+  z-index: 3; 
+}
+
+.character:hover ~ .overlay {
+  background: rgba(0,0,0,0.45);
+}
+
+.character:hover ~ .overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+
+.LANDING-PAGE:hover .character {
+  filter: brightness(0.4);     
+}
+
+
+.character:hover {
+  filter: brightness(1) !important;
+}
+
+
+.popup-imgsendi {
+  position: absolute;
+  bottom: 0px;             
+  left: 70%;
+  transform: translateX(100%);
+  width: 700px;               
+  opacity: 0;
+  animation: popupAnim 1.2s ease-out forwards;
+  animation-delay: 0.3s;     
+}
+
+.popup-imgpaler {
+  position: absolute;
+  bottom: 0px;             
+  left: 30%;
+  transform: translateX(100%);
+  width: 600px;               
+  opacity: 0;
+  animation: popupAnim 1.2s ease-out forwards;
+  animation-delay: 0.3s;      
+}
+
+@keyframes popupAnim {
+  0% {
+    transform: translate(-50%, 50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+
+
+@font-face {
+  font-family: 'Akatab';
+  src: url('Akatab-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+}
+
+
+
+
+.headline-stroke {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Akatab , extra-bold;
+  font-size: 150px;
+  font-weight: 1200;
+  color: transparent;
+  text-shadow: 
+      -3px  3px 0 #f7b237,
+       3px  3px 0 #f7b237;  
+
+  letter-spacing: 4px;
+
+  opacity: 0;
+  animation: fadeInHeadline 1.5s ease-out forwards;
+  animation-delay: 0.4s; 
+  z-index: 1; 
+}
+
+
+.scroll-text {
+  font-family: Akatab;
+  font-size: 150px;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 3px #f7b237;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.4;
+  animation: turunSekali 2.5s ease-out forwards;
+}
+
+.scroll-1 { top: -150px; animation-delay: 0s; }
+.scroll-2 { top: -250px; animation-delay: 0.2s; }
+.scroll-3 { top: -350px; animation-delay: 0.4s; }
+.scroll-4 { top: -450px; animation-delay: 0.6s; }
+
+@keyframes turunSekali {
+  0%   { transform: translate(-50%, -120px); opacity: 0; }
+  60%  { opacity: 0.35; }
+  100% { transform: translate(-50%, 0); opacity: 0.4; }
+}
+
+
+
+.headline-text {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Akatab , extra-bold;
+  font-size: 150px;
+  font-weight: 1200;
+  color: white;
+
+  letter-spacing: 4px;
+
+  opacity: 0;
+  animation: fadeInHeadline 1.5s ease-out forwards;
+  animation-delay: 0.4s; 
+  z-index: 1; 
+}
+
+@keyframes fadeInHeadline {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 0px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.character {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.character:hover {
+  transform: scale(1.05);
+}
+

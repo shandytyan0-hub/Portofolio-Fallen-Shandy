@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sertifikat</title>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      background: transparent; 
+    }
+
+    .overlay {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      position: relative;
+    }
+
+    .slider {
+      position: relative;
+    }
+
+    .slider img {
+      width: 336px;   
+      height: 476px;  
+      object-fit: contain;
+      display: block;
+      background: transparent;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    
+    .nextBtn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(255, 255, 255, 0.45);
+      border: none;
+      padding: 8px 12px;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+      transition: 0.2s;
+    }
+
+    .nextBtn:hover {
+      background: rgba(255, 255, 255, 0.7);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay" id="overlay">
+    <div class="slider" id="slider">
+      <img id="slideImage" src="art1.jpg" alt="sertifikat" />
+      <button class="nextBtn" onclick="nextSerti(event)">➜</button>
+    </div>
+  </div>
+
+  <script>
+    const images = [
+      'art1.jpg',
+      'art2.jpg',
+      'art3.jpg',
+      'art4.jpg',
+      'art5.jpg'
+    ];
+
+    let currentIndex = 0;
+    const imgEl = document.getElementById('slideImage');
+
+    function nextSerti(e) {
+      e.stopPropagation();
+      currentIndex = (currentIndex + 1) % images.length;
+      imgEl.src = images[currentIndex] + '?v=' + Date.now();
+    }
+
+  </script>
+
+</body>
+</html>

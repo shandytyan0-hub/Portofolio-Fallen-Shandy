@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Profile</title>
+<style>
+@font-face {
+  font-family: 'Poppins';
+  font-weight: normal;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  margin: 0;
+  background: transparent;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.ktp {
+  width: 700px;
+  height: 405px;
+  background: url('profile.png') center/cover no-repeat;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  transform: scale(0.67);
+  transform-origin: center center;
+}
+
+.menu {
+  position: absolute;
+  left: 60px;
+  top: 90px;
+  width: 360px;
+}
+
+.item {
+  cursor: pointer;
+  margin-bottom: 18px;
+  transition: all .4s ease;
+}
+
+.label {
+  font-size: 28px;
+  color: #0c2c4d;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: 1.2px;
+  word-spacing: 3px;
+}
+
+.label span {
+  display:inline-block;
+  transition: transform .4s ease;
+}
+
+.item.active .label span {
+  transform: rotate(90deg);
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-14px);
+  transition: all .45s ease;
+  padding-left: 28px;
+  color: #0c2c4d;
+  font-size: 18px;
+  line-height: 1.7;
+  letter-spacing: 1.2px;
+  word-spacing: 5px;
+  font-weight: 500;
+}
+
+.item.active .content {
+  max-height: 200px;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 8px;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+</style>
+</head>
+<body>
+
+<div class="ktp">
+  <div class="menu">
+
+    <div class="item" data-id="profile">
+      <div class="label"><span>&gt;</span> Profile</div>
+      <div class="content">
+        Name: Raiffalen Alyusuffi P.T <br>
+        Date of Birth: 8 September 2006<br>
+        Address: Jl. Mars Selatan XIV  
+        Passion: Cinematography, photography, editing, UI/UX <br>
+        Status: Student
+
+      </div>
+    </div>
+
+    <div class="item" data-id="education">
+      <div class="label"><span>&gt;</span> Education</div>
+      <div class="content">
+        SD Al-Fitrah<br>
+        SMP Tulus Kartika<br>
+        SMK Negeri 4 Bandung
+      </div>
+    </div>
+
+    <div class="item" data-id="skill">
+      <div class="label"><span>&gt;</span> Skills</div>
+      <div class="content">
+        Video Editing<br>
+        Photo Manipulation<br>
+        Photography
+        Camera Operation
+        Film Production
+        Directing
+      </div>
+    </div>
+
+    <div class="item" data-id="contact">
+      <div class="label"><span>&gt;</span> Contact</div>
+      <div class="content">
+        085183494974
+        fallentry10@gmail.com
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const items = document.querySelectorAll('.item');
+
+items.forEach(item => {
+  item.addEventListener('click', () => {
+    const isActive = item.classList.contains('active');
+
+    items.forEach(i => {
+      i.classList.remove('active');
+      i.classList.remove('hidden');
+    });
+
+    if (!isActive) {
+      item.classList.add('active');
+
+      items.forEach(i => {
+        if (i !== item) i.classList.add('hidden');
+      });
+
+    
+      const menuTop = document.querySelector('.menu').getBoundingClientRect().top - 18;
+      const firstItemTop = menuTop;
+      const currentTop = item.getBoundingClientRect().top;
+      const indexOffset = Array.from(items).indexOf(item) * 6;
+      const offset = firstItemTop - currentTop - indexOffset;
+      item.style.transform = `translateY(${offset}px)`;
+    } else {
+      item.style.transform = 'translateY(0)';
+    }
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+.HOME-page-sendi-wrapper {
+  width: 1440px;
+  height: 1024px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+}
+
+
+.HOME-page-sendi .b-gsendi {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 1024px;
+  object-fit: cover;
+  z-index: 10;
+}
+
+
+.hover-item {
+  position: absolute;
+  object-fit: cover;
+  transition: transform 0.25s ease, filter 0.25s ease;
+  cursor: pointer;
+  z-index: 220; 
+}
+
+.hover-item:hover {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 20px white);
+}
+
+
+.CV-sendi { top: 441px; left: 500px; width: 426px; height: 548px; }
+.KTP-sendi { top: 152px; left: 529px; width: 321px; height: 237px; }
+.manual-art-sendi { top: 437px; left: 858px; width: 472px; height: 581px; }
+.HP-IMAGE-AJA-INI { top: 225px; left: 216px; width: 388px; height: 472px; }
+.sertifikat-sendi { top: 575px; left: 18px; width: 435px; height: 384px; }
+
+
+.HOME-page-sendi .cahaya,
+.HOME-page-sendi .masking-objek,
+.HOME-page-sendi .KTP-masking,
+.HOME-page-sendi .shadow,
+.HOME-page-sendi .shadow-atas {
+  position: absolute;
+  object-fit: cover;
+  pointer-events: none; 
+  z-index: 215;
+}
+
+
+
+.HOME-page-sendi .cahaya { top: 0; left: 86px; width: 1259px; height: 1024px; z-index: 310; }
+.HOME-page-sendi .masking-objek { top: 299px; left: 485px; width: 606px; height: 339px; z-index: 310; }
+.HOME-page-sendi .KTP-masking { top: 184px; left: 641px; width: 257px; height: 171px; z-index: 310; }
+.HOME-page-sendi .shadow { top: 819px; left: 0; width: 1440px; height: 205px; z-index: 310; }
+.HOME-page-sendi .shadow-atas { top: 0; left: 0; width: 1440px; height: 269px; z-index: 310; }
+
+
+
+.hover-item.dim {
+  filter: brightness(0.3); 
+  transition: filter 0.25s ease;
+}
+
+
+.hover-overlay {
+  pointer-events: none;
+}
+
+
+.back-button {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  padding: 40px 80px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 9999 !important; 
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 221, 0, 0.9);
+}

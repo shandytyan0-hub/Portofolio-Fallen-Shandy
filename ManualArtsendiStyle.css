@@ -1,0 +1,129 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.cv {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.INI-ADALAH-GAMBAR-BG {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.manual-art-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.manual-art-slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.art-card {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.art-frame {
+  position: relative;
+  width: 550px;
+  max-width: 90%;
+}
+
+.art-frame img {
+  width: 100%;
+  display: block;
+  filter: drop-shadow(0 0 6px white);
+  transition: 0.4s;
+}
+
+.art-frame {
+  width: 550px;
+  max-width: 90%;
+}
+
+.art-frame.art-small {
+  width: 900px;  
+}
+
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  color: white;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.art-frame:hover img {
+  filter: brightness(0.4);
+}
+
+.art-frame:hover .overlay {
+  opacity: 1;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255,255,255,0.85);
+  border: none;
+  font-size: 32px;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+.prev { left: 40px; }
+.next { right: 40px; }
+
+.back-button {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  padding: 10px 20px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 221, 0, 0.9);
+}

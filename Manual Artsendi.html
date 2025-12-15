@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manual Art Sendi</title>
+  <link rel="stylesheet" href="ManualArtsendiStyle.css" />
+</head>
+<body>
+
+<div class="cv">
+
+  <img class="INI-ADALAH-GAMBAR-BG" src="HOME Page no ART.png" />
+
+  <div class="manual-art-wrapper">
+
+    <button class="nav prev" onclick="prevArt()">&#10094;</button>
+
+    <div class="manual-art-slider" id="artSlider">
+
+<div class="art-card">
+  <div class="art-frame">
+    <img src="Manualartsendi1.png" />
+    <div class="overlay">
+      <p>
+        <strong>Potrait</strong><br>
+This is a Grade 10 assignment where we were asked to create a facial sketch and then 
+color it to resemble a chosen character. The character could be freely selected, and I chose 
+Wednesday Addams, portrayed by Jenna Ortega. The art style was also flexible, allowing options such as
+ realism, anime, sketch, or other styles.
+
+
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="art-card">
+  <div class="art-frame art-small">
+    <img src="Manualartsendi2.png" />
+    <div class="overlay">
+      <p>
+        <strong>Anatomy of Typography</strong><br>
+        This assignment focuses on applying the anatomy of typography from a specific font. We analyzed elements such as the crossbar, whether the font is sans serif or not, kerning, ascenders, and other typographic details accurately, so that when it was created on paper, the result looked neat and well-organized.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="art-card">
+  <div class="art-frame art-small">
+    <img src="Manualartsendi3.png" />
+    <div class="overlay">
+      <p>
+        <strong>Making Font</strong><br>
+        In this project, we created a custom font designed to visually represent the style and meaning of a word. For example, I chose the word “Ramen,” and the font was decorated with ramen-inspired elements, where the ornaments and even the letterforms themselves were transformed to resemble ramen.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="art-card">
+  <div class="art-frame art-small">
+    <img src="Manualartsendi4.png" />
+    <div class="overlay">
+      <p>
+        <strong>Still Life</strong><br>
+        In this project, I studied realistic sketching and coloring techniques using a realistic photo reference. After that, the sketch was drawn in a drawing book and carefully colored to achieve a realistic result that closely matches the reference photo.
+      </p>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <button class="nav next" onclick="nextArt()">&#10095;</button>
+  </div>
+
+  <button class="back-button" onclick="window.history.back()">Back</button>
+
+</div>
+
+<script>
+  let index = 0;
+  const slider = document.getElementById("artSlider");
+  const total = slider.children.length;
+
+  function updateSlider() {
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  function nextArt() {
+    index = (index + 1) % total;
+    updateSlider();
+  }
+
+  function prevArt() {
+    index = (index - 1 + total) % total;
+    updateSlider();
+  }
+</script>
+
+</body>
+</html>

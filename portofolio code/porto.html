@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="folio.css">
+    <title>Portfolio</title>
+</head>
+<body>
+
+<div class="wrapper">
+    <button class="back-button" onclick="window.location.href='landingpage.html'">Back</button>
+    <!-- Background -->
+    <img src="img/bg.png" class="bg">
+
+    <img src="img/bgglow1.png" class="cv-bgglow">
+
+    <!-- Curriculum Vitae -->
+    <img src="img/cv.png" class="item cv" onclick="cvframe()">
+
+    
+
+    <!-- Digital Art -->
+    <img src="img/digi.png" class="item digi" onclick="digiframe()">
+
+    <!-- Manual Art -->
+    <img src="img/art.png" class="item art" onclick="manualframe()">
+
+    <!-- Certificate -->
+    <img src="img/serti.png" class="item serti" onclick="sertiframe()">
+
+    <!-- Profile -->
+    <img src="img/profile.png" class="item profile" onclick="profileframe()">
+
+
+    <img src="" class="glow">
+
+    <button id="closeBtn" class="close-btn" onclick="closeFrame()">✕</button>
+
+</div>
+
+<iframe id="bookframe" class="bookframe" src=""></iframe>
+
+<script src="bookframe.js"></script>
+
+
+</body>
+</html>

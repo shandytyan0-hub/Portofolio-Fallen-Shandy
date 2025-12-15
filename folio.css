@@ -1,0 +1,166 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
+
+.wrapper {
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+}
+
+
+.bg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    display: block;      
+}
+
+
+.item {
+    position: absolute;
+    width: 300px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.item:hover { 
+    transform: scale(1.05) rotate(var(--rot));
+
+}
+
+
+.cv {
+    top: 280px;
+    left: 207px;
+    scale: 3;
+    transform: rotate(0deg);
+    --rot: 0deg;
+}
+.cv-bgglow {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    scale: 1;
+    transform: rotate(0deg);
+    --rot: 0deg;
+}
+
+.digi {
+    top: 380px;
+    left: 357px;
+    scale: 1.3;
+    transform: rotate(3deg);
+    --rot: 3deg;
+}
+
+.art {
+    top: 540px;
+    right: 455px;
+    scale: 1.5;
+    transform: rotate(0deg);
+    --rot: 0deg;
+}
+
+.serti {
+    top: 195px;
+    right: 150px;
+    width: 350px;
+    scale: 1.6;
+    transform: rotate(0deg);
+    --rot: 0deg;
+}
+
+.profile {
+    bottom: 70px;
+    right: 250px;
+    width: 220px;
+    transform: rotate(-2deg);
+    --rot: -2deg;
+}
+
+.bookframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    display: none;
+    background: rgba(0,0,0,0.4);
+}
+
+
+.glow {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 5;
+}
+
+
+.glow.show {
+    opacity: 1;
+}
+
+
+body.dimmed .bg {
+    filter: brightness(0.3);
+}
+
+body.dimmed .item:not(.active) {
+    filter: brightness(0.3);
+}
+
+
+.item.active {
+    filter: brightness(1);
+    z-index: 10;
+}
+
+
+.close-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    font-size: 28px;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 10000;
+    color: #333;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: none;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+}
+
+.back-button {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  padding: 40px 80px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 9999 !important; 
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 221, 0, 0.9);
+}

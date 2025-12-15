@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sendi Page</title>
+  <link rel="stylesheet" href="HomePageSendistyle.css" />
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='landingpage.html'">Back</button>
+  <div class="HOME-page-sendi-wrapper">
+    <div class="HOME-page-sendi">
+
+      <img class="b-gsendi" src="BGsendi.png" />
+
+      <img class="CV-sendi hover-item clickable" src="CV Sendi.png" />
+      <img class="KTP-sendi hover-item" src="KTP Sendi.png" />
+      <img class="manual-art-sendi hover-item" src="Manual Art Sendi.png" />
+      <img class="HP-IMAGE-AJA-INI hover-item" src="HP IMAGE AJA INI.png" />
+      <img class="sertifikat-sendi hover-item" src="Sertifikat Sendi.png" />
+
+      <img class="cahaya" src="Cahaya.png" />
+      <img class="masking-objek" src="Masking Objek.png" />
+      <img class="KTP-masking" src="KTP Masking.png" />
+      <img class="shadow" src="Shadow.png" />
+      <img class="shadow-atas" src="Shadow atas.png" />
+
+      <div class="hover-overlay"></div>
+
+    </div>
+  </div>
+
+  <script>
+    function scaleSENDI() {
+      const baseWidth = 1440;
+      const baseHeight = 1024;
+      const scale = window.innerWidth / baseWidth;
+      const wrapper = document.querySelector(".HOME-page-sendi-wrapper");
+      wrapper.style.transform = `scale(${scale})`;
+      wrapper.style.left = "0";
+      wrapper.style.top = (window.innerHeight - baseHeight * scale) / 2 + "px";
+    }
+    window.addEventListener("resize", scaleSENDI);
+    window.addEventListener("load", scaleSENDI);
+
+    const overlay = document.querySelector('.hover-overlay');
+    const hoverItems = document.querySelectorAll('.hover-item');
+
+    hoverItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        overlay.style.background = 'rgba(0,0,0,0.3)';
+      });
+      item.addEventListener('mouseleave', () => {
+        overlay.style.background = 'rgba(0,0,0,0)';
+      });
+    });
+    
+  </script>
+  
+<script>
+const d= document.querySelectorAll('.hover-item');
+
+hoverItems.forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    hoverItems.forEach(other => {
+      if(other !== item) {
+        other.classList.add('dim'); 
+      }
+    });
+  });
+
+  item.addEventListener('mouseleave', () => {
+    hoverItems.forEach(other => {
+      other.classList.remove('dim'); 
+    });
+  });
+});
+</script>
+<script>
+  document.querySelector(".CV-sendi").addEventListener("click", () => {
+    window.location.href = "CVShandyrill.html";
+  });
+
+  document.querySelector(".KTP-sendi").addEventListener("click", () => {
+    window.location.href = "ktpSendi.html";
+  });
+
+  document.querySelector(".manual-art-sendi").addEventListener("click", () => {
+    window.location.href = "Manual Artsendi.html";
+  });
+
+  document.querySelector(".HP-IMAGE-AJA-INI").addEventListener("click", () => {
+    window.location.href = "DigitalSendi.html";
+  });
+
+  document.querySelector(".sertifikat-sendi").addEventListener("click", () => {
+    window.location.href = "sertisendi.html";
+  });
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: transparent; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 50vw;  
+}
+
+img {
+    display: block;
+    width: 100%;  \
+    height: auto;
+}
+
+.nextBtn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(255, 255, 255, 0.45);
+    border: none;
+    padding: 8px 12px;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: 0.2s;
+}
+
+.nextBtn:hover {
+    background: rgba(255, 255, 255, 0.7);
+}

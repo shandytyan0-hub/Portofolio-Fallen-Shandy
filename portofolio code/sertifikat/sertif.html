@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sertifikat Viewer</title>
+</head>
+<body>
+
+<div class="container">
+    <img id="sertiImage" src="serti1.png" alt="sertifikat">
+    <button class="nextBtn" onclick="nextSerti()">➜</button>
+</div>
+
+<script>
+    const sertis = ["serti1.png", "serti2.png", "serti3.png", "serti4.png"];
+    let index = 0;
+
+    function nextSerti() {
+        index = (index + 1) % sertis.length;
+        document.getElementById("sertiImage").src = sertis[index];
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="posterrstyle.css" />
+  </head>
+  <body>
+    <div class="poster">
+      <img class="INI-ADALAH-GAMBAR-BG" src="INI ADALAH GAMBAR BG.png" />
+
+      <div class="carousel">
+        <div class="carousel-item"><img src="hutri80%.png" /></div>
+        <div class="carousel-item"><img src="final poster veggie minimalist.png" /></div>
+        <div class="carousel-item"><img src="poster boociimie manipulasi@3x.png" /></div>
+        <div class="carousel-item"><img src="Poster GhaisanFF@3x.png" /></div>
+        <div class="carousel-item"><img src="Yowi's Birthday Poster Final.png" /></div>
+        <div class="carousel-item"><img src="CarlottaGFXFinalWhitTexture.jpg" /></div>
+        <div class="carousel-item"><img src="Poster dekape.png" /></div>
+      </div>
+
+      <button class="back-button" onclick="window.history.back()">Back</button>
+    </div>
+
+    <script>
+      let index = 0;
+      const items = document.querySelectorAll(".carousel-item");
+
+      function updateCarousel() {
+        items.forEach((item, i) => {
+          item.classList.remove("center", "left", "right", "hidden");
+
+          if (i === index) {
+            item.classList.add("center");
+          } else if (i === (index - 1 + items.length) % items.length) {
+            item.classList.add("left");
+          } else if (i === (index + 1) % items.length) {
+            item.classList.add("right");
+          } else {
+            item.classList.add("hidden");
+          }
+        });
+      }
+
+      updateCarousel();
+
+      setInterval(() => {
+        index = (index + 1) % items.length;
+        updateCarousel();
+      }, 2500);
+    </script>
+  </body>
+</html>

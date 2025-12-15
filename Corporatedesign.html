@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Slider Fix</title>
+    <link rel="stylesheet" href="Corporatedesignstyle.css" />
+  </head>
+  <body>
+    <div class="uiux">
+      <img class="INI-ADALAH-GAMBAR-BG" src="INI ADALAH GAMBAR BG.png" />
+
+      <div class="headline" id="headline"></div>
+
+    <div class="slider">
+    <img src="Corpo2.png" class="slide active" alt="slide1" />
+    <img src="Corpo1.png" class="slide slide-small" alt="slide2" />
+    </div>
+
+      <div class="next-button" id="nextButton">&#9654;</div>
+
+      <button class="back-button" onclick="window.history.back()">Back</button>
+    </div>
+
+    <script>
+      const slides = document.querySelectorAll('.slide');
+      const headline = document.getElementById('headline');
+      const nextButton = document.getElementById('nextButton');
+
+      const headlines = [
+
+      ];
+
+      let currentIndex = 0;
+
+      function showIndex(index) {
+        slides.forEach((s, i) => {
+          s.classList.remove('active');
+        });
+        slides[index].classList.add('active');
+
+        if (headlines[index]) headline.textContent = headlines[index];
+        else headline.textContent = '';
+      }
+
+      nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showIndex(currentIndex);
+      });
+
+    </script>
+  </body>
+</html>
